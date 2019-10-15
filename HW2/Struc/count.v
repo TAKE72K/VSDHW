@@ -1,42 +1,15 @@
 
-module DTFF_reset(output Q, Q_not, input D, clk, reset);
-    wire    wl0, wl1, wl2, wl3;
 
-    nand    g0 (wl0, wl1, wl3),
-            g1 (wl1, clk, wl0, reset),
-            g2 (wl2, clk, wl1, wl3),
-            g3 (wl3, D, wl2, reset),
-            g4 (Q, wl1, Q_not),
-            g5 (Q_not, wl2, Q, reset);
-endmodule
-
-
-module JK_FF_reset(output Q, input J, K, clk, reset);
-    wire    K_not, qnot, wl0, wl1, wl2;
-
-    // instantiate gates
-    not     g0 (K_not, K);
-
-    and     g1 (wl0, J, qnot),
-            g2 (wl1, K_not, Q);
-
-    or      g3 (wl2, wl0, wl1);
-    // instantiate D-Flip-flop module
-    DTFF_reset D0 (q, qnot, wl2, clk, reset);
-endmodule
 
 module JKFF(Q,q,J,K,clk);//jkflip-flop
 input J,K,clk;
 output Q,q;
-//wire w_s,w_r,wQ,wq;
-//assign wQ=Q;
-//assign wq=q;
-assign q=~Q;
-JK_FF_reset r(.Q(Q),.J(J),.K(K),.clk(clk),.reset(1'b0));
-//nand  n1(w_s,J,wq,clk);
-//nand  n2(w_r,K,wQ,clk);
-//nand  ns(Q,wq,w_s);
-//nand  nr(wq,wQ,w_r);
+wire w_s,w_r;
+
+nand n1(w_s,J,q,clk);
+nand n2(w_r,K,Q,clk);
+nand ns(Q,q,w_s);
+nand nr(q,Q,w_r);
 endmodule
 
 module MUX(O,A,B,S);

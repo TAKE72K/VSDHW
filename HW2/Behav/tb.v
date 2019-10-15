@@ -1,0 +1,31 @@
+`timescale 1ns/10ps
+
+`include        "jk.v"
+
+module count_tb();
+reg clk,J ,K;
+wire Q,q;
+
+JKFF dut(.clk(clk), .Q(Q),.q(q), .J(J),.K(K));
+initial begin 
+clk=0;
+force Q=1'b0;#5 release Q;
+forever #5 clk=~clk;
+end
+initial begin
+J=1'b0;K=1'b1;
+
+#10
+J=1'b1;
+
+#20
+K=1'b0;
+#40;
+ $finish;
+end
+initial
+begin
+	$dumpfile("j.vcd");
+	$dumpvars;
+end
+endmodule 

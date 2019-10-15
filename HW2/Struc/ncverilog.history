@@ -14,3 +14,6 @@ s13(16Oct2019:00:15:09):  ncverilog +access+rwc testbench.v
 s14(16Oct2019:00:17:29):  ncverilog +access+rwc testbench.v 
 s15(16Oct2019:00:17:49):  ncverilog +access+rwc testbench.v 
 s16(16Oct2019:00:18:08):  ncverilog +access+rwc testbench.v 
+s17(16Oct2019:00:26:07):  ncverilog +access+rwc testbench.v 
+s18(16Oct2019:00:26:39):  ncverilog +access+rwc testbench.v 
+s19(16Oct2019:00:33:27):  ncverilog +access+rwc tb.v 

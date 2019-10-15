@@ -1,0 +1,15 @@
+module JKFF(output Q,q,input J,K,clk);//jkflip-flop
+
+wire x,y,Q,q;
+
+
+
+
+nand n1(x,q,J,clk);
+
+nand n2(y,K,Q,clk);
+
+nand #5 n3(Q,x,q);
+
+nand #5 n4(q,y,Q);
+endmodule

@@ -1,39 +1,43 @@
 ncverilog: 15.20-s039: (c) Copyright 1995-2017 Cadence Design Systems, Inc.
-TOOL:	ncverilog	15.20-s039: Started on Oct 15, 2019 at 22:10:12 CST
+TOOL:	ncverilog	15.20-s039: Started on Oct 16, 2019 at 01:07:08 CST
 ncverilog
 	+access+rwc
-	testbench.v
-file: testbench.v
-	module worklib.count:v
-		errors: 0, warnings: 0
+	tb.v
+Recompiling... reason: file './tb.v' is newer than expected.
+	expected: Wed Oct 16 01:06:54 2019
+	actual:   Wed Oct 16 01:07:20 2019
+file: tb.v
+wire x,y,Q,q;
+         |
+ncvlog: *W,ILLPDX (jk.v,3|9): Multiple declarations for a port not allowed in module with ANSI list of port declarations (port 'Q') [12.3.4(IEEE-2001)].
+(`include file: jk.v line 12, file: tb.v line 3)
+wire x,y,Q,q;
+           |
+ncvlog: *W,ILLPDX (jk.v,3|11): Multiple declarations for a port not allowed in module with ANSI list of port declarations (port 'q') [12.3.4(IEEE-2001)].
+(`include file: jk.v line 12, file: tb.v line 3)
 	module worklib.count_tb:v
 		errors: 0, warnings: 0
 		Caching library 'worklib' ....... Done
 	Elaborating the design hierarchy:
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.count:v <0x6b7b6582>
-			streams:   2, words:   737
-		worklib.count_tb:v <0x00cb9740>
-			streams:   6, words:  2582
+		worklib.count_tb:v <0x228141a8>
+			streams:   7, words:  3720
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
 		                  Instances  Unique
 		Modules:                  2       2
-		Registers:                4       4
+		Primitives:               4       2
+		Registers:                3       3
 		Scalar wires:             3       -
-		Vectored wires:           1       -
-		Always blocks:            1       1
 		Initial blocks:           3       3
-		Cont. assignments:        0       1
 		Pseudo assignments:       3       3
 		Simulation timescale:  10ps
 	Writing initial simulation snapshot: worklib.count_tb:v
 Loading snapshot worklib.count_tb:v .................... Done
 ncsim> source /usr/cad/cadence/INCISIV/cur/tools/inca/files/ncsimrc
 ncsim> run
-Simulation complete via $finish(1) at time 310 NS + 0
-./testbench.v:25 $finish;
+Simulation interrupted at 10 NS + 1
 ncsim> exit
-TOOL:	ncverilog	15.20-s039: Exiting on Oct 15, 2019 at 22:10:14 CST  (total: 00:00:02)
+TOOL:	ncverilog	15.20-s039: Exiting on Oct 16, 2019 at 01:07:17 CST  (total: 00:00:09)
