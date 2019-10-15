@@ -1,0 +1,26 @@
+module FA(S, Cout, A, B, Cin);
+    input A, B, Cin;
+    output S, Cout;
+    wire w1, w2, w3;
+    
+    xor xor1(w1, A, B);
+    xor xor2(S, w1, Cin);
+    
+    and and1(w2, w1, Cin);
+    and and2(w3, A, B);
+    
+    or or1(Cout, w2, w3);
+
+endmodule
+module adder_16bit_s(A , B ,Add_ctrl , O , C_out , SUM);
+
+input [15:00] A , B ;
+input Add_ctrl;//1 for sub ,0 for add
+
+output [15:00] SUM ;
+output C_out ;
+output O ;
+
+
+
+endmodule
