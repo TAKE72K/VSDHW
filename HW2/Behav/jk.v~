@@ -5,11 +5,8 @@ wire x,y,Q,q;
 
 
 
-nand n1(x,q,J,clk);
-
-nand n2(y,K,Q,clk);
-
-nand #5 n3(Q,x,q);
-
-nand #5 n4(q,y,Q);
+and a1(x,K,Q,clk);
+and a2(y,J,q,clk);
+nor n1(Q,q,x);
+nor n2(q,Q,y);
 endmodule

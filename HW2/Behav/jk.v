@@ -1,12 +1,10 @@
-module JKFF(output Q,q,input J,K,clk);//jkflip-flop
+module JKFF(Q,q,J,K,clk);//jkflip-flop
+input J,K,clk;
+output Q,q;
+wire w_s,w_r;
 
-wire x,y,Q,q;
-
-
-
-
-and a1(x,K,Q,clk);
-and a2(y,J,q,clk);
-nor n1(Q,q,x);
-nor n2(q,Q,y);
+nand n1(w_s,J,q,clk);
+nand n2(w_r,K,Q,clk);
+nand ns(Q,q,w_s);
+nand nr(q,Q,w_r);
 endmodule
