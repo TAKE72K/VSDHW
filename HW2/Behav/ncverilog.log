@@ -1,12 +1,11 @@
 ncverilog: 15.20-s039: (c) Copyright 1995-2017 Cadence Design Systems, Inc.
-TOOL:	ncverilog	15.20-s039: Started on Oct 15, 2019 at 20:53:04 CST
+TOOL:	ncverilog	15.20-s039: Started on Oct 15, 2019 at 22:10:12 CST
 ncverilog
 	+access+rwc
 	testbench.v
-Recompiling... reason: file './testbench.v' is newer than expected.
-	expected: Tue Oct 15 20:52:15 2019
-	actual:   Tue Oct 15 20:53:10 2019
 file: testbench.v
+	module worklib.count:v
+		errors: 0, warnings: 0
 	module worklib.count_tb:v
 		errors: 0, warnings: 0
 		Caching library 'worklib' ....... Done
@@ -16,7 +15,7 @@ file: testbench.v
 		worklib.count:v <0x6b7b6582>
 			streams:   2, words:   737
 		worklib.count_tb:v <0x00cb9740>
-			streams:   6, words:  2247
+			streams:   6, words:  2582
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
@@ -34,7 +33,7 @@ file: testbench.v
 Loading snapshot worklib.count_tb:v .................... Done
 ncsim> source /usr/cad/cadence/INCISIV/cur/tools/inca/files/ncsimrc
 ncsim> run
-Simulation complete via $finish(1) at time 170 NS + 0
-./testbench.v:22 $finish;
+Simulation complete via $finish(1) at time 310 NS + 0
+./testbench.v:25 $finish;
 ncsim> exit
-TOOL:	ncverilog	15.20-s039: Exiting on Oct 15, 2019 at 20:53:05 CST  (total: 00:00:01)
+TOOL:	ncverilog	15.20-s039: Exiting on Oct 15, 2019 at 22:10:14 CST  (total: 00:00:02)
