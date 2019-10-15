@@ -1,0 +1,37 @@
+ncverilog: 15.20-s039: (c) Copyright 1995-2017 Cadence Design Systems, Inc.
+TOOL:	ncverilog	15.20-s039: Started on Oct 16, 2019 at 00:18:08 CST
+ncverilog
+	+access+rwc
+	testbench.v
+Recompiling... reason: file './count.v' is newer than expected.
+	expected: Wed Oct 16 00:15:19 2019
+	actual:   Wed Oct 16 00:18:20 2019
+file: testbench.v
+	module worklib.JKFF:v
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.JKFF:v <0x0be9587d>
+			streams:   1, words:   113
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                  Instances  Unique
+		Modules:                 27       6
+		Primitives:             104       4
+		Registers:                3       3
+		Scalar wires:            18       -
+		Initial blocks:           3       3
+		Cont. assignments:        0       1
+		Pseudo assignments:       8       4
+		Simulation timescale:  10ps
+	Writing initial simulation snapshot: worklib.count_tb:v
+Loading snapshot worklib.count_tb:v .................... Done
+ncsim> source /usr/cad/cadence/INCISIV/cur/tools/inca/files/ncsimrc
+ncsim> run
+Simulation complete via $finish(1) at time 310 NS + 0
+./testbench.v:25 $finish;
+ncsim> exit
+TOOL:	ncverilog	15.20-s039: Exiting on Oct 16, 2019 at 00:18:09 CST  (total: 00:00:01)

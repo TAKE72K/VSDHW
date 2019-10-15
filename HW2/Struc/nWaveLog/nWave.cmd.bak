@@ -1,0 +1,18 @@
+wvConvertFile -win $_nWave1 -o \
+           "/home/ncku_class/vlsi2019/vlsi2012/Desktop/VSDHW/HW2/Struc/count.vcd.fsdb" \
+           "/home/ncku_class/vlsi2019/vlsi2012/Desktop/VSDHW/HW2/Struc/count.vcd"
+wvSetPosition -win $_nWave1 {("G1" 0)}
+wvOpenFile -win $_nWave1 \
+           {/home/ncku_class/vlsi2019/vlsi2012/Desktop/VSDHW/HW2/Struc/count.vcd.fsdb}
+wvGetSignalOpen -win $_nWave1
+wvGetSignalSetScope -win $_nWave1 "/count_tb"
+wvSetPosition -win $_nWave1 {("G1" 1)}
+wvSetPosition -win $_nWave1 {("G1" 1)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/count_tb/count\[4:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 1 )} 
+wvSetPosition -win $_nWave1 {("G1" 1)}
