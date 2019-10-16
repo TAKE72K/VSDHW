@@ -1,0 +1,9 @@
+*design* DebussyLib (btIdent Verdi_O-2018.09)
+Command arguments:
+    +define+verilog
+    /home/ncku_class/vlsi2019/vlsi2012/Desktop/VSDHW/HW2/Struc/count.v
+
+Highest level modules:
+counter
+
+Total	0 error(s),   0 warning(s)
