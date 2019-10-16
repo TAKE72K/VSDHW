@@ -18,7 +18,10 @@ updown=0;
 rst=0;
 #50;
 updown=1;
-# 100;
+# 80;
+updown=0;
+#160;
+rst=1;
 $finish;
 end
 initial

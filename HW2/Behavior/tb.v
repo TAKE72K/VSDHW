@@ -9,7 +9,7 @@ wire Q,q;
 JKFF dut(.clk(clk), .Q(Q),.q(q), .J(J),.K(K));
 initial begin 
 clk=0;
-force Q=1'b0;#5release Q;
+force Q=1'b0;#5 release Q;
 forever #5 clk=~clk;
 end
 initial begin
